@@ -21,8 +21,7 @@ jobs:
         uses: android-actions/setup-android@v3
 
       - name: Build debug APK
-        # Projeniz ana dizindeyse '.' kalsın. 
-        # Eğer bir alt klasördeyse, '.' yerine o klasörün adını yazın (Örn: working-directory: android)
+        # Projeniz ana dizindeyse '.' kalsın. Bir alt klasördeyse klasör adını yazın.
         working-directory: .
         run: |
           chmod +x gradlew
@@ -32,4 +31,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: jarvis-apk
-          path: '**/app/build/outputs/apk
+          path: '**/app/build/outputs/apk/debug/app-debug.apk'
