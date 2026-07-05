@@ -21,8 +21,9 @@ jobs:
         uses: android-actions/setup-android@v3
 
       - name: Build debug APK
-        # Projeniz ana dizindeyse '.' kalsın. Bir alt klasördeyse klasör adını yazın.
-        working-directory: .
+        # Buradaki 'O_KLASÖRÜN_ADI' yerine gradlew dosyasının durduğu klasörün adını yazın!
+        # Örnek: working-directory: android
+        working-directory: O_KLASÖRÜN_ADI
         run: |
           chmod +x gradlew
           ./gradlew assembleDebug --no-daemon
